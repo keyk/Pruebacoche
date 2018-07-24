@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<title>SIMON Estadio pokemon</title>
+
+        <script language="javascript" type="text/javascript" src="../../../../jquery-2.2.0.js"></script>
+        <script type="text/javascript"> if (window.jQuery == undefined) { document.write( unescape('%3Cscript src="http://code.jquery.com/jquery-2.2.0.js" type="text/javascript"%3E%3C/script%3E') ); }</script>
+
+        <link rel="stylesheet" href="css.css" type="text/css" />
+        <script language="javascript" type="text/javascript" src="js.js"></script>
+    </head>
+    <body>
+        <p id="test" style="color:white;"></p>
+    	<div id="contenedor">
+        <button id="btstart" class="boton" onClick="play();">START</button>
+        	<div id="panel">
+                	<img id="img1" src="img/arcanine.gif" alt="" />
+                	<img id="img2" src="img/eevee.gif" alt="" />
+	                <img id="img3" src="img/pikachu.gif" alt="" />
+			<img id="img4" src="img/gastly.gif" alt="" />
+        	        <img id="img5" src="img/giglipuf.gif" alt="" /> 
+            </div>
+            <br clear="all"/>
+            <div id="resultado"></div>
+            <br clear="all"/>
+            <div id="botones">
+            	<button class="boton" id="bt1" onClick="movi_boton(1);"></button>
+            	<button class="boton" id="bt2" onClick="movi_boton(2);"></button>
+            	<button class="boton" id="bt3" onClick="movi_boton(3);"></button>
+            	<button class="boton" id="bt4" onClick="movi_boton(4);"></button>
+            	<button class="boton" id="bt5" onClick="movi_boton(5);"></button>
+            </div>
+            <br clear="all"/>
+            <button id="btreset" class="boton" onClick="resetear();" >RESET</button>
+        </div>
+    </body>
+</html>
