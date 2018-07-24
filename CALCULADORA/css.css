@@ -1,0 +1,172 @@
+/* Calculadora */
+*
+{
+	z-index:0;
+}
+*:focus
+{
+	outline:none;
+}
+#contenedor
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:300px;
+	height:410px;
+	position:relative;
+}
+#calculadora
+{
+	width:300px;
+	height:350px;
+	position:relative;
+	box-sizing:border-box;
+	padding: 10px;
+	background: linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet);
+	border-radius:20%;
+	border-width:5px;
+	border-color:#777676;
+	border-style:solid;
+}
+#calc
+{
+	width:300px;
+	height:350px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:275px;
+	z-index:-1;
+	position:absolute;
+	margin:auto auto;
+}
+#calc img
+{
+	width:275px;
+	height:275px;
+}
+#dres
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	width: 173px;
+	height: 63px;
+	border-collapse: collapse;
+	font-size: 14px;
+	margin-bottom: 25px;
+	text-align: right;
+	border-style: solid;
+	border-radius: 15px;
+	border-color: #B7B7B7;
+	background-color:rgba(93,93,93,0.51);
+}
+input
+{
+	float:left;
+	width: 171px;
+	height: 30px;
+	text-align:right;
+	color:#00FFFF;
+	font-size:18px;
+	border-style:none;
+	background-color:rgba(0,0,0,0.00);
+}
+h1
+{
+}
+.boton
+{
+	float:left;
+	border-radius:100%;
+	width:50px;
+	height:50px;
+	text-align:center;
+	background: linear-gradient(135deg, #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%);
+	animation-name:rotar;
+	animation-duration:5s;
+	animation-fill-mode: forwards;	
+}
+@keyframes rotar
+{
+	from
+	{
+		transform:rotate(0deg);
+		font-size:0px;
+		text-align:center;
+		width:0px;
+		height:0px;
+	}
+	to
+	{
+		transform:rotate(3600deg);
+		font-size:14px;
+		text-align:center;
+		width:50px;
+		height:50px;
+	}
+}
+.boton:hover
+{
+	background: radial-gradient(ellipse at center, yellow 0%,#fccd4d 50%,#f8b500 51%,yellow 100%);
+}
+#bot
+{
+	width:250px;
+	height:200px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:25px;
+}
+#dbn
+{
+	float:left;
+	width:150px;
+	height:250px;
+}
+#dopera
+{
+	float:left;
+	width:50px;
+	height:200px;
+}
+#del
+{
+	float:right;
+	width:50px;
+	height:200px;
+}
+#del button
+{
+	background: linear-gradient(135deg, #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%);
+}
+#del button:hover
+{
+	background: radial-gradient(ellipse at center, red 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,red 100%);
+}
+#anicalc
+{
+	position:relative;
+}
+#anima
+{
+	position:absolute;
+	/*bottom:-5px;
+	right:-25px;*/
+	/*transition:all 1s;*/
+	top: 140px;
+	left: 182px;
+	transition-property:all;
+	transition-duration:1s;
+}
+#anima img
+{
+	width:150px;
+	height:170px;
+	
+}
+#anima:hover
+{
+	
+	/*right:-625px;*/
+	left: 300px;
+}

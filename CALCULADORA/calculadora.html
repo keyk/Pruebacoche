@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="css.css">
+        <script type="text/javascript">
+			function bn(num)
+			{
+				var resultado = document.getElementById('iresult');
+				num = parseInt(num);
+				if((num>=0 && num<=9) && resultado.value.length <= 12)
+				{
+					if( resultado.value.length != 0 )
+					{
+						if( num != 0 && resultado.value != 0 )
+						{
+							/*resultado.readOnly = false;*/
+							resultado.value = resultado.value + num;
+							/*resultado.readOnly = "readOnly";*/
+						}	
+					}
+					else
+					{
+						resultado.value = resultado.value + num;
+					}
+				}
+				else
+				{
+					alert("tecla equivocada.");
+				}
+			}
+			function bp()
+			{
+				var resultado = document.getElementById('iresult');
+				if( (resultado.value.length != 0 ) && ( resultado.value.includes('.') == false ) )
+				{
+					resultado.value = resultado.value + '.';
+				}
+			}
+			function bclear()
+			{
+				var resultado = document.getElementById('iresult');
+				var aux = document.getElementById('iaux');
+				if(resultado.value.length != 0)
+				{
+					resultado.value = "";
+				}
+				else
+				{
+					aux.value = "";
+				}				
+			}
+			function boperacion(op)
+			{
+				var resultado = document.getElementById('iresult');
+				var aux = document.getElementById('iaux');
+				if(resultado.value.length != 0)
+				{
+					aux.value = aux.value + ' ' + resultado.value + ' ' + op ;
+					resultado.value = ""; // o bclear();
+				}
+				else
+				{
+					if(aux.value.length !=0 )
+					{
+						aux.value = aux.value.substring(0,aux.value.length - 1); // Quitar el ultimo caracter
+						aux.value = aux.value + op;
+					}
+				}
+			}
+			function bcalcular()
+			{
+				var resultado = document.getElementById('iresult');
+				var aux = document.getElementById('iaux');
+				if(aux.value.length !=0 && resultado.value.length != 0 )
+				{
+					aux.value = aux.value + resultado.value;
+					resultado.value = eval(aux.value);
+					aux.value = "";
+				}
+			}
+        </script>
+    </head>
+    <body>
+    	<div id="contenedor">
+            <h1>Mi Calculadora</h1>
+            <div id="anicalc">
+            	<div id="anima"><img src="charmander.png" alt="charmander"></div>
+                <div id="calculadora">
+                <div id="calc"><img src="pokeball.png" alt="pokeball"></div>
+                    <div id="dres">
+                    	<input type="text" id="iaux" readonly="readonly">
+                        <input type="text" maxlength="12" id="iresult" placeholder="0" readonly="readonly">
+                    </div>
+                    <div id="bot">
+                        <div id="dbn">
+                            <button type="button" class="boton" onClick="bn(1);">1</button>
+                            <button type="button" class="boton" onClick="bn(2);">2</button>
+                            <button type="button" class="boton" onClick="bn(3);">3</button>
+                            <button type="button" class="boton" onClick="bn(4);">4</button>
+                            <button type="button" class="boton" onClick="bn(5);">5</button>
+                            <button type="button" class="boton" onClick="bn(6);">6</button>
+                            <button type="button" class="boton" onClick="bn(7);">7</button>
+                            <button type="button" class="boton" onClick="bn(8);">8</button>
+                            <button type="button" class="boton" onClick="bn(9);">9</button>
+                            <button type="button" class="boton" onClick="bn(0);">0</button>
+                            <button type="button" class="boton" onClick="bp();">.</button>
+                            <button type="button" class="boton" onClick="bcalcular();">=</button>
+                        </div>
+                        <div id="dopera">
+                            <button type="button" class="boton" onClick="boperacion('+');">+</button>
+                            <button type="button" class="boton" onClick="boperacion('-');">-</button>
+                            <button type="button" class="boton" onClick="boperacion('*');">*</button>
+                            <button type="button" class="boton" onClick="boperacion('/');">/</button>
+                        </div>
+                        <div id="del">
+                            <button type="button" class="boton" onClick="bclear();">C</button>
+                            <button type="button" class="boton" onClick="alert('En costrucion.');">MCLR</button>
+                            <button type="button" class="boton" onClick="alert('En costrucion.');">M+</button>
+                            <button type="button" class="boton" onClick="alert('En costrucion.');">M-</button>
+                        </div>
+                    </div>
+                </div>
+               </div>
+        </div>
+    </body>
+</html>
